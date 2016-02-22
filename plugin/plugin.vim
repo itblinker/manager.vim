@@ -9,4 +9,6 @@ call vim#SetupGlobalSettings()
 call manager#plugins#Setup()
 call manager#plugins#SetupMapping()
 
+echo maktaba#plugin#RegisteredPlugins()
+
 
