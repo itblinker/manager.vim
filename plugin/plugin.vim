@@ -8,5 +8,5 @@ endif
 call vim#SetupGlobalSettings()
 call manager#plugins#Setup()
 call manager#plugins#SetupMapping()
-call maktaba#json#python#Disable()
+
 
