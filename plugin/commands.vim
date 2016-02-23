@@ -5,5 +5,5 @@ if !s:enter
 endif
 "}}}
 
-"command! Rc :e $MYVIMRC
-"command! Reload :source $MYVIMRC
+command RcEdit :e $MYVIMRC
+command RcSource :source $MYVIMRC

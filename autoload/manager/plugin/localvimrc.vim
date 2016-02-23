@@ -1,4 +1,4 @@
-function plugins#localvimrc#Setup()
+function manager#plugin#localvimrc#Settings()
     let g:localvimrc_file = ".lvimrc"
     let g:localvimrc_event = ["VimEnter"]
 
@@ -6,4 +6,8 @@ function plugins#localvimrc#Setup()
     let g:localvimrc_sandbox = 0
 
     "let g:localvimrc_file_dir  = "./"
+endfunction
+
+function manager#plugin#localvimrc#Mappings()
+
 endfunction

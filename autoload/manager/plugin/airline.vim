@@ -1,4 +1,4 @@
-function plugins#airline#Setup()
+function manager#plugin#airline#Settings()
     "let g:airline_theme='base16_summerfruit'
     "{{{ tabs
     let g:airline#extensions#tabline#enabled = 1
@@ -21,3 +21,6 @@ function plugins#airline#Setup()
     "}}}
 endfunction
 
+function manager#plugin#airline#Mappings()
+
+endfunction

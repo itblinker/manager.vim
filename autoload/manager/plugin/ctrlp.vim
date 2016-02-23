@@ -1,4 +1,4 @@
-function plugins#ctrlp#Setup()
+function manager#plugin#ctrlp#Settings()
     let g:ctrlp_show_hidden = 1
     let g:ctrlp_by_filename = 0
 
@@ -29,4 +29,8 @@ function plugins#ctrlp#Setup()
         "applying
         let g:ctrlp_user_command = 'ag %s -l '.s:ag_options.' '.s:ag_cumulative_ignore.'-g ""'
     endif"}}}
+endfunction
+
+function manager#plugin#ctrlp#Mappings()
+
 endfunction

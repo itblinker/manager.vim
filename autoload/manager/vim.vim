@@ -1,5 +1,4 @@
-function vim#SetupGlobalSettings()
-
+function manager#vim#Settings()
     exec 'syntax enable'
     exec 'filetype plugin indent on'
 
@@ -63,4 +62,26 @@ function vim#SetupGlobalSettings()
     exec 'set undolevels=1000'
 
     exec 'set foldmethod=marker'
+endfunction
+
+function manager#vim#Mappings()
+    execute 'let g:mapleader = '.string(',')
+    execute 'inoremap jk <esc>'
+    execute 'nnoremap <leader><space> :nohlsearch<CR>'
+
+    execute 'nnoremap <c-k> <c-w>k'
+    execute 'nnoremap <c-l> <c-w>l'
+    execute 'nnoremap <c-h> <c-w>h'
+    execute 'nnoremap <c-x> <c-w>x'
+
+    execute 'nnoremap <silent> <left> :3wincmd <<cr>'
+    execute 'nnoremap <silent> <right> :3wincmd ><cr>'
+    execute 'nnoremap <silent> <down> :3wincmd +<cr>'
+    execute 'nnoremap <silent> <up> :3wincmd -<cr>'
+
+    execute 'nnoremap td :tabclose <CR>'
+
+    execute 'set pastetoggle=<F2>'
+
+    execute 'silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)'
 endfunction
