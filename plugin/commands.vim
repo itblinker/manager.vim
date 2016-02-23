@@ -1,9 +1,9 @@
 "{{{ source guard
-let [s:plugin, s:enter] = maktaba#plugin#Enter(expand('<sfile>:p'))
-if !s:enter
+if exists('g:loaded_manager_commands')
     finish
 endif
+let g:loaded_manager_commands = 1
 "}}}
 
-command RcEdit :e $MYVIMRC
-command RcSource :source $MYVIMRC
+comma RcEdit :e $MYVIMRC
+command RcSourc :source $MYVIMRC
