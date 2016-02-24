@@ -1,4 +1,27 @@
-function manager#Customize(p_plugin)
-    execute 'silent call manager#plugin#'.a:p_plugin.'#Settings()'
-    execute 'silent call manager#plugin#'.a:p_plugin.'#Mappings()'
+function manager#ConfigureVim()
+    call maktaba#json#python#Disable()
+
+    call manager#vim#Settings()
+    call manager#vim#Mappings()
+
+    "call manager#plugin#Customize('localvimrc')
+    "call manager#plugin#Customize('filesearch')
+    "call manager#Customize('ag')
+    "call manager#plugin#Customize('ctagger')
+
+    call manager#plugin#Customize('airline')
+    call manager#plugin#Customize('bufferline')
+    call manager#plugin#Customize('cppenhancedhighlits')
+    call manager#plugin#Customize('ctrlp')
+    call manager#plugin#Customize('ctrlptjump')
+    call manager#plugin#Customize('easygit')
+    call manager#plugin#Customize('easymotion')
+    call manager#plugin#Customize('editgq')
+    call manager#plugin#Customize('gundo')
+    call manager#plugin#Customize('maximizer')
+    call manager#plugin#Customize('nerdtree')
+    call manager#plugin#Customize('nerdcomment')
+    call manager#plugin#Customize('qfenter')
+    call manager#plugin#Customize('unite')
+    call manager#plugin#Customize('vimbookmarks')
 endfunction
