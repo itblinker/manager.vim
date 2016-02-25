@@ -65,7 +65,8 @@ function manager#vim#Settings()
 endfunction
 
 function manager#vim#Mappings()
-    execute 'let g:mapleader = '.string(',')
+    let g:mapleader = ','
+
     execute 'inoremap jk <esc>'
     execute 'nnoremap <leader><space> :nohlsearch<CR>'
 
@@ -74,14 +75,18 @@ function manager#vim#Mappings()
     execute 'nnoremap <c-h> <c-w>h'
     execute 'nnoremap <c-x> <c-w>x'
 
-    execute 'nnoremap <silent> <left> :3wincmd <<cr>'
-    execute 'nnoremap <silent> <right> :3wincmd ><cr>'
-    execute 'nnoremap <silent> <down> :3wincmd +<cr>'
-    execute 'nnoremap <silent> <up> :3wincmd -<cr>'
+    execute 'noremap <silent> <left> :3wincmd <<cr>'
+    execute 'noremap <silent> <right> :3wincmd ><cr>'
+    execute 'noremap <silent> <down> :3wincmd +<cr>'
+    execute 'noremap <silent> <up> :3wincmd -<cr>'
 
     execute 'nnoremap td :tabclose <CR>'
 
     execute 'set pastetoggle=<F2>'
 
     execute 'silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)'
+endfunction
+
+function manager#vim#PathsConfiguration()
+    let g:manager_cwd_settings = getcwd().'/.store.vim'
 endfunction

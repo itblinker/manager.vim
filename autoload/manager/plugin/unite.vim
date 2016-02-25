@@ -1,11 +1,16 @@
 function manager#plugin#unite#Settings()
     exec "call unite#filters#matcher_default#use(['matcher_fuzzy'])"
 
-    let g:unite_data_directory = g:__CwdStoreDirectory."/unite"
+    let g:unite_data_directory = g:manager_cwd_settings.'/unite'
+
+    let g:unite_enable_auto_select = 0
+
+    let g:unite_source_rec_min_cache_files = 0
+    let g:unite_source_rec_max_cache_files = 0
 
     let g:unite_source_history_yank_enable = 1
     let g:unite_source_yank_history_save_clipboard = 1
-    let g:unite_prompt = '» '
+    let g:unite_prompt = '>> '
 endfunction
 
 function manager#plugin#unite#Mappings()
@@ -14,8 +19,6 @@ function manager#plugin#unite#Mappings()
     execute 'nnoremap <leader>K :Unite -smartcase -start-insert -wrap -no-split spell_suggest<CR>'
     execute 'nnoremap <leader>G :Unite -smartcase -start-insert -wrap -no-split<CR>git<Esc>'
     execute 'nnoremap <leader>S :Unite -smartcase -start-insert -wrap -no-split<CR>svn<Esc>'
-
-    execute 'nnoremap <leader>V :execute ''EditVifm ''.expand("%:p:h").'' ''.getcwd()<CR>'
 
     execute 'nnoremap <leader>s :Unite -smartcase -start-insert -wrap -no-split file_rec/async:!<CR>'
     execute 'nnoremap <leader>o :Unite -smartcase -wrap -no-split buffer<CR>'

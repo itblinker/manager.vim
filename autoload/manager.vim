@@ -3,11 +3,15 @@ function manager#ConfigureVim()
 
     call manager#vim#Settings()
     call manager#vim#Mappings()
+    call manager#vim#PathsConfiguration()
 
     "call manager#plugin#Customize('localvimrc')
     "call manager#plugin#Customize('filesearch')
     "call manager#Customize('ag')
     "call manager#plugin#Customize('ctagger')
+
+    call manager#plugin#Customize('unite')
+    call manager#plugin#Customize('unitesession')
 
     call manager#plugin#Customize('airline')
     call manager#plugin#Customize('bufferline')
@@ -22,6 +26,6 @@ function manager#ConfigureVim()
     call manager#plugin#Customize('nerdtree')
     call manager#plugin#Customize('nerdcomment')
     call manager#plugin#Customize('qfenter')
-    call manager#plugin#Customize('unite')
     call manager#plugin#Customize('vimbookmarks')
+    call manager#plugin#Customize('vifm')
 endfunction

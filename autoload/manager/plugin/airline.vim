@@ -1,5 +1,5 @@
 function manager#plugin#airline#Settings()
-    "let g:airline_theme='base16_summerfruit'
+    let g:airline_theme='base16_summerfruit'
     "{{{ tabs
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#show_buffer = 1	"number of buffers per tab
