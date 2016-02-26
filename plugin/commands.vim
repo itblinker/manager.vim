@@ -6,4 +6,4 @@ let g:loaded_manager_commands = 1
 "}}}
 
 comma RcEdit :e $MYVIMRC
-command RcSourc :source $MYVIMRC
+command RcSource :source $MYVIMRC

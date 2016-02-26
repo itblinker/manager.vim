@@ -1,8 +1,5 @@
 function manager#ConfigureVim()
     call maktaba#json#python#Disable()
-
-    call manager#vim#Settings()
-    call manager#vim#Mappings()
     call manager#vim#PathsConfiguration()
 
     "call manager#plugin#Customize('localvimrc')

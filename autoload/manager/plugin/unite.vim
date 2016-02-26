@@ -1,6 +1,8 @@
 function manager#plugin#unite#Settings()
     exec "call unite#filters#matcher_default#use(['matcher_fuzzy'])"
 
+    "let g:unite_no_default_keymappings = 1
+
     let g:unite_data_directory = g:manager_cwd_settings.'/unite'
 
     let g:unite_enable_auto_select = 0
