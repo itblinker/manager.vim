@@ -10,5 +10,3 @@ nmap <buffer> p <Plug>(unite_smart_preview)
 nmap <buffer> <C-s> ?splitswitch<Plug>(unite_cursor_top)<CR>
 nmap <buffer> <C-v> ?vsplitswitch<CR>
 nmap <buffer> <C-t> ?tabopen<CR>
-
-nnoremap <buffer> <C-]> :<C-u>UniteWithCursorWord -immediately tag<CR>

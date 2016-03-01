@@ -9,7 +9,7 @@ function manager#ConfigureVim()
 
     call manager#plugin#Customize('unite')
     call manager#plugin#Customize('unitesession')
-    call manager#plugin#Customize('uintetag')
+    call manager#plugin#Customize('unitetag')
 
     call manager#plugin#Customize('airline')
     call manager#plugin#Customize('bufferline')
