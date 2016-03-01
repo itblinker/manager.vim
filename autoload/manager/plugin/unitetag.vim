@@ -7,6 +7,7 @@ endfunction
 
 function manager#plugin#unitetag#Mappings()
    execute 'nnoremap <C-]> :UniteWithCursorWord -immediately tag<CR>'
+   execute 'nnoremap <C-D> :echo 'dupa'<CR>
 endfunction
 
 
