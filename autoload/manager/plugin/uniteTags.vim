@@ -10,5 +10,12 @@ function manager#plugin#unitetag#Mappings()
    execute 'nnoremap <C-D> :echo ''dupa'' <CR>'
 endfunction
 
-
-
+function manager#plugin#unitetag#GtagsAvailable()
+    if filereadable(s:file_GPATH) &&
+                \ filereadable(s:file_GTAGS) &&
+                \ filereadable(s:file_GRTAGS)
+        echomsg 'files arefien'
+    else
+        echomsg 'not those are not available'
+    endif
+endfunction
