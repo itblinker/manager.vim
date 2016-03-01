@@ -5,7 +5,8 @@ function manager#ConfigureVim()
 
     call manager#plugin#Customize('unite')
     call manager#plugin#Customize('unitesession')
-    call manager#plugin#Customize('unitetag')
+    call manager#plugin#Customize('uniteTags')
+
     call manager#plugin#Customize('airline')
     call manager#plugin#Customize('bufferline')
     call manager#plugin#Customize('cppenhancedhighlits')

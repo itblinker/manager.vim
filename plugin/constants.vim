@@ -5,7 +5,7 @@ endif
 let g:loaded_manager_constants = 1
 "}}}
 
-let s:file_GPATH = getcwd().'/GPATH'
-let s:file_GRTAGS = getcwd().'/GRTAGS'
-let s:file_GTAGS = getcwd().'/GTAGS'
+let g:file_GPATH = getcwd().'/GPATH'
+let g:file_GRTAGS = getcwd().'/GRTAGS'
+let g:file_GTAGS = getcwd().'/GTAGS'
 

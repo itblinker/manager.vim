@@ -1,21 +1,20 @@
-function manager#plugin#unitetag#Settings()
+function manager#plugin#uniteTags#Settings()
     let g:unite_source_tag_show_location = 0
 
     let g:unite_source_tag_max_name_length = 50
     let g:unite_source_tag_max_fname_length = 50
 endfunction
 
-function manager#plugin#unitetag#Mappings()
-   execute 'nnoremap <C-]> :UniteWithCursorWord -immediately tag<CR>'
-   execute 'nnoremap <C-D> :echo ''dupa'' <CR>'
+function manager#plugin#uniteTags#Mappings()
+   execute 'nnoremap <C-]> :call manager#plugin#uniteTags#LaunchProperTags()<CR>'
 endfunction
 
-function manager#plugin#unitetag#GtagsAvailable()
-    if filereadable(s:file_GPATH) &&
-                \ filereadable(s:file_GTAGS) &&
-                \ filereadable(s:file_GRTAGS)
-        echomsg 'files arefien'
+function manager#plugin#uniteTags#LaunchProperTags()
+    if filereadable(g:file_GPATH) &&
+                \ filereadable(g:file_GTAGS) &&
+                \ filereadable(g:file_GRTAGS)
+        execute 'Unite -immediately gtags/def'
     else
-        echomsg 'not those are not available'
+        execute 'UniteWithCursorWord -immediately tag'
     endif
 endfunction
