@@ -7,7 +7,7 @@ endfunction
 
 function manager#plugin#unitetag#Mappings()
    execute 'echomsg ''dupa'''
-   execute 'nnoremap <buffer> <C-]> :<C-u>UniteWithCursorWord -immediately tag<CR>'
+   execute 'nnoremap <C-]> :<C-u>UniteWithCursorWord -immediately tag<CR>'
 endfunction
 
 
