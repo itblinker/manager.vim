@@ -3,5 +3,6 @@ function manager#plugin#gundo#Settings()
 endfunction
 
 function manager#plugin#gundo#Mappings()
-    execute 'nnoremap <silent> <leader>U :GundoShow<CR>'
+    call SafeMapLeader('nnoremap', 'U', ':GundoShow<CR>')
+    "execute 'nnoremap <silent> <leader>U :GundoShow<CR>'
 endfunction

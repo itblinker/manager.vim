@@ -18,9 +18,6 @@ endfunction
 function manager#plugin#unite#Mappings()
     execute 'nnoremap <leader>M :Unite -smartcase -start-insert -wrap -no-split<CR>'
     execute 'nnoremap <leader>R :UniteResume -smartcase -wrap -no-split<CR>'
-    execute 'nnoremap <leader>K :Unite -smartcase -start-insert -wrap -no-split spell_suggest<CR>'
-    execute 'nnoremap <leader>G :Unite -smartcase -start-insert -wrap -no-split<CR>git<Esc>'
-    execute 'nnoremap <leader>S :Unite -smartcase -start-insert -wrap -no-split<CR>svn<Esc>'
 
     execute 'nnoremap <leader>s :Unite -smartcase -start-insert -wrap -no-split file_rec/async:!<CR>'
     execute 'nnoremap <leader>o :Unite -smartcase -wrap -no-split buffer<CR>'
