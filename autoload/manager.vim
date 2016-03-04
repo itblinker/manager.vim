@@ -1,18 +1,14 @@
 function manager#ConfigureVim()
-
     call maktaba#json#python#Disable()
     call manager#vim#PathsConfiguration()
 
     call manager#plugin#Customize('unite')
-    call manager#plugin#Customize('unitesession')
     call manager#plugin#Customize('uniteTags')
 
     call manager#plugin#Customize('airline')
     call manager#plugin#Customize('bufferline')
     call manager#plugin#Customize('cppenhancedhighlits')
-    call manager#plugin#Customize('easygit')
     call manager#plugin#Customize('easymotion')
-
     call manager#plugin#Customize('gundo')
     call manager#plugin#Customize('maximizer')
     call manager#plugin#Customize('nerdtree')
@@ -22,6 +18,8 @@ function manager#ConfigureVim()
     call manager#plugin#Customize('vimbookmarks')
     call manager#plugin#Customize('vifm')
 
+    "call manager#plugin#Customize('easygit')
+    "call manager#plugin#Customize('unitesession')
     "call manager#plugin#Customize('editgq')
     "call manager#plugin#Customize('localvimrc')
     "call manager#plugin#Customize('filesearch')
