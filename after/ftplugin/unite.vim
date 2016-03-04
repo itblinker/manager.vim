@@ -13,6 +13,7 @@ nmap <buffer> gg <Plug>(unite_cursor_top)
 nmap <buffer> G <Plug>(unite_cursor_bottom)
 nmap <buffer> p <Plug>(unite_smart_preview)
 nmap <buffer> ? <Plug>(unite_quick_help)
+nmap <buffer> M <Plug>(unite_disable_max_candidates)
 
 nnoremap <silent><buffer><expr> o unite#smart_map('o', unite#do_action('open'))
 nnoremap <silent><buffer><expr> d unite#smart_map('d', unite#do_action('delete'))

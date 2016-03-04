@@ -1,15 +1,24 @@
+function manager#plugin#unite#FindConfiguration()
+    let g:unite_source_find_default_expr = '-type f \( -iname ''**'' \)'
+endfunction
+
 function manager#plugin#unite#Settings()
     exec "call unite#filters#matcher_default#use(['matcher_fuzzy'])"
 
     let g:unite_data_directory = g:manager_db_dir.'/unite'
-    let g:unite_source_rec_min_cache_files = 0
+
+    let g:unite_source_rec_min_cache_files = 100
     let g:unite_source_rec_max_cache_files = 0
+
     let g:unite_source_history_yank_enable = 1
     let g:unite_source_yank_history_save_clipboard = 1
 
     let g:unite_enable_auto_select = 0
     let g:unite_no_default_keymappings = 1
     let g:unite_prompt = '>> '
+
+    call manager#plugin#unite#FindConfiguration()
+
 endfunction
 
 function manager#plugin#unite#Mappings()
