@@ -5,5 +5,4 @@ function manager#plugin#easygit#Settings()
 endfunction
 
 function manager#plugin#easygit#Mappings()
-
 endfunction

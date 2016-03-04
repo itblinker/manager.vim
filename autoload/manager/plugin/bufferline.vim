@@ -4,5 +4,4 @@ function manager#plugin#bufferline#Settings()
 endfunction
 
 function manager#plugin#bufferline#Mappings()
-
 endfunction

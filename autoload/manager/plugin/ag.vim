@@ -4,6 +4,5 @@ function manager#plugin#ag#Settings()
 endfunction
 
 function manager#plugin#ag#Mappings()
-
 endfunction
 

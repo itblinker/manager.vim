@@ -22,5 +22,4 @@ function manager#plugin#airline#Settings()
 endfunction
 
 function manager#plugin#airline#Mappings()
-
 endfunction

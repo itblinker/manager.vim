@@ -5,5 +5,4 @@ function manager#plugin#cppenhancedhighlits#Settings()
 endfunction
 
 function manager#plugin#cppenhancedhighlits#Mappings()
-
 endfunction

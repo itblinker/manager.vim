@@ -1,5 +1,4 @@
 function manager#plugin#vifm#Settings()
-
 endfunction
 
 function manager#plugin#vifm#Mappings()

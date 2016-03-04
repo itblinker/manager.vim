@@ -5,8 +5,6 @@ function manager#plugin#ctrlptjump#Settings()
 endfunction
 
 function manager#plugin#ctrlptjump#Mappings()
-    call SafeMapLeader('nnoremap', '<C-]>', ':CtrlPtjump<CR>')
-    call SafeMapLeader('vnoremap', '<C-]>', ':CtrlPtjumpVisual<CR>')
+    execute 'nnoremap <c-]> :CtrlPtjump<cr>'
+    execute 'vnoremap <c-]> :CtrlPtjumpVisual<cr>'
 endfunction
-
-

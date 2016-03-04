@@ -32,5 +32,4 @@ function manager#plugin#ctrlp#Settings()
 endfunction
 
 function manager#plugin#ctrlp#Mappings()
-
 endfunction

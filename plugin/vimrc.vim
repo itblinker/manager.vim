@@ -91,7 +91,6 @@ nnoremap td :tabclose <CR>
 
 set pastetoggle=<F2>
 "}}}
-
 "{{{ post configuration settings
 silent! call manager#ConfigureVim()
 silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
