@@ -12,15 +12,17 @@ function manager#ConfigureVim()
     call manager#plugin#Customize('cppenhancedhighlits')
     call manager#plugin#Customize('easygit')
     call manager#plugin#Customize('easymotion')
-    call manager#plugin#Customize('editgq')
+
     call manager#plugin#Customize('gundo')
     call manager#plugin#Customize('maximizer')
     call manager#plugin#Customize('nerdtree')
     call manager#plugin#Customize('nerdcomment')
     call manager#plugin#Customize('qfenter')
+
     call manager#plugin#Customize('vimbookmarks')
     call manager#plugin#Customize('vifm')
 
+    "call manager#plugin#Customize('editgq')
     "call manager#plugin#Customize('localvimrc')
     "call manager#plugin#Customize('filesearch')
     "call manager#Customize('ag')

@@ -13,7 +13,7 @@ function manager#plugin#unite#Settings()
 endfunction
 
 function manager#plugin#unite#Mappings()
-    execute 'nnoremap <leader>l :Unite -smartcase -start-insert -no-split <CR>'
+    execute 'nnoremap <leader>M :Unite -smartcase -start-insert -no-split <CR>'
     execute 'nnoremap <leader>r :UniteResume -smartcase -no-split<CR>'
 
     execute 'nnoremap <leader>w :Unite -smartcase -no-split window<CR>'

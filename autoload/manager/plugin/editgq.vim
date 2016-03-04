@@ -5,5 +5,4 @@ function manager#plugin#editgq#Settings()
 endfunction
 
 function manager#plugin#editgq#Mappings()
-
 endfunction

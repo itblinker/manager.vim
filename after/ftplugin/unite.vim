@@ -23,3 +23,4 @@ nnoremap <silent><buffer><expr> S unite#smart_map('S"', unite#do_action('vsplits
 imap <buffer> <C-f> <Plug>(unite_select_next_page)
 imap <buffer> <C-b> <Plug>(unite_select_previous_page)
 imap <buffer> <CR> <Plug>(unite_do_default_action)
+imap <buffer> <Tab> <Plug>(unite_choose_action)
