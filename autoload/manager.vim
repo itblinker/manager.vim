@@ -17,6 +17,7 @@ function manager#ConfigureVim()
 
     call manager#plugin#Customize('vimbookmarks')
     call manager#plugin#Customize('vifm')
+    call manager#plugin#rainbow_parenthesisCustomize('rainbow_parenthesis')
 
     "call manager#plugin#Customize('easygit')
     "call manager#plugin#Customize('unitesession')
