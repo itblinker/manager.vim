@@ -33,7 +33,7 @@ endfunction
 function manager#plugin#unite#Mappings()
     let g:unite_no_default_keymappings = 1
 
-    execute 'nnoremap <leader>M :Unite -smartcase -start-insert <CR>'
+    execute 'nnoremap <leader>u :Unite -smartcase -start-insert <CR>'
     execute 'nnoremap <leader>r :UniteResume -smartcase<CR>'
 
     execute 'nnoremap <leader>w :Unite -smartcase window<CR>'
