@@ -5,6 +5,9 @@ function manager#plugin#nerdtree#Settings()
 endfunction
 
 function manager#plugin#nerdtree#Mappings()
-    execute 'nnoremap <silent> <leader>N :NERDTreeCWD<CR>'
-    execute 'nnoremap <silent> <leader>P :NERDTreeFind<CR>'
+    execute 'nnoremap <leader>N :NERDTreeCWD<CR>'
+    execute 'nnoremap <leader>P :NERDTreeFind<CR>'
+
+    let g:NERDTreeMapOpenSplit='s'
+    let g:NERDTreeMapOpenVSplit='S'
 endfunction
