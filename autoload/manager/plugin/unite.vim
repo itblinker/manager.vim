@@ -1,9 +1,9 @@
 function manager#plugin#unite#FindConfiguration()
-    let g:unite_source_find_default_expr = '-type f \( -iname ''**'' \)'
+    let g:unite_source_find_default_expr = '-type f -iname ''*'
 endfunction
 
 function manager#plugin#unite#Settings()
-    exec "call unite#filters#matcher_default#use(['matcher_fuzzy'])"
+    exec "call unite#filters#matcher_default#use(['matcher_glob'])"
 
     let g:unite_data_directory = g:manager_db_dir.'/unite'
 

@@ -6,15 +6,5 @@ function manager#plugin#uniteTags#Settings()
 endfunction
 
 function manager#plugin#uniteTags#Mappings()
-   execute 'nnoremap <C-]> :call manager#plugin#uniteTags#LaunchProperTags()<CR>'
-endfunction
-
-function manager#plugin#uniteTags#LaunchProperTags()
-    if filereadable(g:file_GPATH) &&
-                \ filereadable(g:file_GTAGS) &&
-                \ filereadable(g:file_GRTAGS)
-        execute 'Unite -immediately gtags/def'
-    else
-        execute 'UniteWithCursorWord -immediately tag'
-    endif
+   execute 'nnoremap <C-]> :UniteWithCursorWord -immediately tag'
 endfunction
