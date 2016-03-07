@@ -20,6 +20,7 @@ nnoremap <silent><buffer><expr> d unite#smart_map('d', unite#do_action('delete')
 nnoremap <silent><buffer><expr> t unite#smart_map('t', unite#do_action('tabopen'))
 nnoremap <silent><buffer><expr> s unite#smart_map('s', unite#do_action('splitswitch'))
 nnoremap <silent><buffer><expr> S unite#smart_map('S"', unite#do_action('vsplitswitch'))
+" add action for p and P - as append and insert
 
 imap <buffer> <C-f> <Plug>(unite_select_next_page)
 imap <buffer> <C-b> <Plug>(unite_select_previous_page)

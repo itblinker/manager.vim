@@ -46,7 +46,6 @@ function manager#plugin#unite#Mappings()
     execute 'nnoremap <leader>p :Unite -smartcase jump<CR>'
     execute 'nnoremap <leader>e :Unite -smartcase change<CR>'
 
-    execute 'nnoremap <leader>i :Unite -smartcase -start-insert t tag<CR>'
     execute 'nnoremap <leader>c :Unite -smartcase -start-insert history/command<CR>'
     execute 'nnoremap <leader>y :Unite -smartcase -start-insert history/yank<CR>'
 endfunction
