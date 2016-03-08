@@ -33,16 +33,15 @@ endfunction
 function manager#plugin#unite#Mappings()
     let g:unite_no_default_keymappings = 1
 
-    execute 'nnoremap <leader>u :Unite -smartcase -start-insert <CR>'
+    execute 'nnoremap <leader>U :Unite -smartcase -start-insert <CR>'
     execute 'nnoremap <leader>r :UniteResume -smartcase<CR>'
 
     execute 'nnoremap <leader>w :Unite -smartcase window<CR>'
     execute 'nnoremap <leader>t :Unite -smartcaset tab<CR>'
 
     execute 'nnoremap <leader>s :Unite -smartcase -start-insert file_rec/async:!<CR>'
-    execute 'nnoremap <leader>o :Unite -smartcase buffer_tab:-<CR>'
+    execute 'nnoremap <leader>b :Unite -smartcase buffer_tab:-<CR>'
 
-    execute 'nnoremap <leader>b :Unite -smartcase bookmark<CR>'
     execute 'nnoremap <leader>p :Unite -smartcase jump<CR>'
     execute 'nnoremap <leader>e :Unite -smartcase change<CR>'
 
