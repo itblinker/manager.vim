@@ -3,5 +3,4 @@ function manager#plugin#unitesession#Settings()
 endfunction
 
 function manager#plugin#unitesession#Mappings()
-
 endfunction
