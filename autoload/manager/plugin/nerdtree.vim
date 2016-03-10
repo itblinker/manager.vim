@@ -2,6 +2,7 @@ function manager#plugin#nerdtree#Settings()
     let g:NERDTreeHighlightCursorline = 1
     let g:NERDTreeBookmarksFile = "./.cache/nerdtree-bookmarks.vim"
     let g:NERDTreeShowBookmarks = 1
+    let g:NERDTreeQuitOnOpen = 1
 endfunction
 
 function manager#plugin#nerdtree#Mappings()
