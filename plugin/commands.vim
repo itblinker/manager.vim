@@ -5,5 +5,5 @@ endif
 let g:loaded_manager_commands = 1
 "}}}
 
-comma RcEdit :e $MYVIMRC
+command RcEdit :e $MYVIMRC
 command RcSource :source $MYVIMRC
