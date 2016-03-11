@@ -1,3 +1,6 @@
+set number
+set relativenumber
+
 nmap <buffer> q <Plug>(unite_exit)
 nmap <buffer> Q <Plug>(unite_all_exit)
 nmap <buffer> m <Plug>(unite_toggle_mark_current_candidate)

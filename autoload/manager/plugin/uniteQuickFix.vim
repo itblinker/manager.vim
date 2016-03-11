@@ -2,6 +2,6 @@ function manager#plugin#uniteQuickFix#Settings()
 endfunction
 
 function manager#plugin#uniteQuickFix#Mappings()
-    execute 'nnoremap <leader>q :Unite -smartcase -auto-preview -previewheight=20 quickfix<CR>'
-    execute 'nnoremap <leader>l :Unite -smartcase -auto-preview -previewheight=20 location_list<CR>'
+    execute 'nnoremap <leader>q :Unite -smartcase '.manager#plugin#unite#GetPreviewCommonSubSettings().' quickfix<CR>'
+    execute 'nnoremap <leader>l :Unite -smartcase '.manager#plugin#unite#GetPreviewCommonSubSettings().' location_list<CR>'
 endfunction
