@@ -4,6 +4,7 @@ endfunction
 
 function manager#plugin#unite#Grep()
     let g:unite_source_grep_default_opts = '-inH --exclude-dir=.git --exclude-dir=.svn --exclude-dir=.bzr'
+    let g:unite_source_grep_search_word_highlight = 'None'
 
     if executable('ag')
         let g:unite_source_grep_command = 'ag'
@@ -29,7 +30,8 @@ function manager#plugin#unite#Cache()
 endfunction
 
 function manager#plugin#unite#Matching()
-    exec "call unite#filters#matcher_default#use(['matcher_glob'])"
+    call unite#filters#matcher_default#use(['matcher_glob'])
+    call unite#filters#sorter_default#use(['sorter_rank'])
     let g:unite_enable_auto_select = 0
     let g:unite_prompt = '>> '
 endfunction
@@ -44,7 +46,7 @@ function manager#plugin#unite#Settings()
 endfunction
 
 function manager#plugin#unite#GetPreviewCommonSubSettings()
-    return  '-winheight=20 -previewheight=11'
+    return  '-auto-preview -winheight=20 -previewheight=11'
 endfunction
 
 " TODO: use this function for all places! checkout the resume option in unite
@@ -58,8 +60,8 @@ function manager#plugin#unite#Mappings()
     let g:unite_no_default_keymappings = 1
 
     execute 'nnoremap <leader>U :Unite -smartcase -start-insert -wipe<CR>'
-    execute 'nnoremap <leader>R :UniteResume -smartcase<CR>'
-    execute 'nnoremap <leader>R :UniteResume ''grep''<CR>'
+    execute 'nnoremap <leader>RR :UniteResume -smartcase<CR>'
+    execute 'nnoremap <leader>RG :UniteResume ''grep''<CR>'
 
     execute 'nnoremap <leader>w :Unite -smartcase -wipe window<CR>'
     execute 'nnoremap <leader>t :Unite -smartcase -wipe tab<CR>'

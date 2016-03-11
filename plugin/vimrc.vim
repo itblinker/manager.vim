@@ -18,6 +18,9 @@ set title
 au CursorHold * checktime
 au FocusLost * silent redraw!
 
+abbreviate copen botright copen
+abbreviate lopen botright lopen
+
 set ttyfast
 set clipboard^=unnamed,unnamedplus
 
