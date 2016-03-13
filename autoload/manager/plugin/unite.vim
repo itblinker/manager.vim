@@ -2,6 +2,7 @@ function manager#plugin#unite#Find()
     let g:unite_source_find_default_expr = '-iname '
 endfunction
 
+
 function manager#plugin#unite#Grep()
     let g:unite_source_grep_default_opts = '-inH --exclude-dir=.git --exclude-dir=.svn --exclude-dir=.bzr'
     let g:unite_source_grep_search_word_highlight = 'None'
@@ -15,19 +16,23 @@ function manager#plugin#unite#Grep()
     endif
 endfunction
 
+
 function manager#plugin#unite#Yank()
     let g:unite_source_history_yank_enable = 1
     let g:unite_source_yank_history_save_clipboard = 1
 endfunction
 
+
 function manager#plugin#unite#Paths()
     let g:unite_data_directory = g:manager_db_dir.'/unite'
 endfunction
+
 
 function manager#plugin#unite#Cache()
     let g:unite_source_rec_min_cache_files = 100
     let g:unite_source_rec_max_cache_files = 0
 endfunction
+
 
 function manager#plugin#unite#Matching()
     call unite#filters#matcher_default#use(['matcher_glob'])
@@ -35,6 +40,7 @@ function manager#plugin#unite#Matching()
     let g:unite_enable_auto_select = 0
     let g:unite_prompt = '>> '
 endfunction
+
 
 function manager#plugin#unite#Settings()
     call manager#plugin#unite#Matching()
@@ -45,9 +51,11 @@ function manager#plugin#unite#Settings()
     call manager#plugin#unite#Yank()
 endfunction
 
+
 function manager#plugin#unite#GetPreviewCommonSubSettings()
     return  '-auto-preview -winheight=20 -previewheight=11'
 endfunction
+
 
 " TODO: use this function for all places! checkout the resume option in unite
 " add mapping / default action for p and P
@@ -55,6 +63,12 @@ endfunction
 function manager#plugin#unite#GrepByUnite()
     execute 'Unite -smartcase '.manager#plugin#unite#GetPreviewCommonSubSettings().' -buffer-name=''grep'' grep:.::'.expand('<cword>')
 endfunction
+
+function manager#plugin#unite#SetupGrepStartLocalization()
+    let l:path = getcwd()
+    if (exists('*ManagerUniteGrep'))
+endfunction
+
 
 function manager#plugin#unite#Mappings()
     let g:unite_no_default_keymappings = 1
@@ -67,8 +81,8 @@ function manager#plugin#unite#Mappings()
     execute 'nnoremap <leader>t :Unite -smartcase -wipe tab<CR>'
 
     execute 'nnoremap <leader>s :Unite -smartcase -start-insert -wipe file_rec/async:!<CR>'
-    execute 'nnoremap <leader>b :Unite -smartcase -wipe buffer_tab:-<CR>'
-    execute 'nnoremap <leader>o :Unite -smartcase -wipe buffer:-<CR>'
+    execute 'nnoremap <leader>b :Unite -smartcase -start-insert -wipe buffer_tab:-<CR>'
+    execute 'nnoremap <leader>o :Unite -smartcase -start-insert -wipe buffer:-<CR>'
 
     execute 'nnoremap <leader>p :Unite -smartcase -wipe jump<CR>'
     execute 'nnoremap <leader>e :Unite -smartcase -wipe change<CR>'
