@@ -4,6 +4,7 @@ function manager#ConfigureVim()
 
     call manager#plugin#Customize('unite')
     call manager#plugin#Customize('uniteTags')
+    call manager#plugin#Customize('uniteGtags')
     call manager#plugin#Customize('uniteQuickFix')
 
     call manager#plugin#Customize('airline')

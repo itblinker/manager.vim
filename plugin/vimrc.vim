@@ -18,6 +18,7 @@ set title
 au CursorHold * checktime
 au FocusLost * silent redraw!
 
+" should open copen/lopen on bottom
 abbreviate copen botright copen
 abbreviate lopen botright lopen
 

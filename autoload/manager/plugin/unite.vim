@@ -73,7 +73,7 @@ endfunction
 function manager#plugin#unite#Mappings()
     let g:unite_no_default_keymappings = 1
 
-    execute 'nnoremap <leader>U :Unite -smartcase -start-insert -wipe<CR>'
+    execute 'nnoremap <leader>M :Unite -smartcase -start-insert -wipe<CR>'
     execute 'nnoremap <leader>RR :UniteResume -smartcase<CR>'
     execute 'nnoremap <leader>RG :UniteResume ''grep''<CR>'
 
@@ -90,5 +90,5 @@ function manager#plugin#unite#Mappings()
     execute 'nnoremap <leader>c :Unite -smartcase -start-insert -wipe history/command<CR>'
     execute 'nnoremap <leader>y :Unite -smartcase -start-insert -wipe history/yank<CR>'
 
-    execute 'nnoremap <leader>g :call manager#plugin#unite#GrepByUnite()<CR>'
+    execute 'nnoremap <leader>G :call manager#plugin#unite#GrepByUnite()<CR>'
 endfunction

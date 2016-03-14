@@ -6,5 +6,5 @@ function manager#plugin#uniteTags#Settings()
 endfunction
 
 function manager#plugin#uniteTags#Mappings()
-   execute 'nnoremap <C-]> :UniteWithCursorWord -immediately tag'
+   "execute 'nnoremap <C-]> :UniteWithCursorWord'.manager#plugin#unite#GetPreviewCommonSubSettings.' -immediately tag'
 endfunction
