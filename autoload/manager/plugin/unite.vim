@@ -90,5 +90,5 @@ function manager#plugin#unite#Mappings()
     execute 'nnoremap <leader>c :Unite -smartcase -start-insert -wipe history/command<CR>'
     execute 'nnoremap <leader>y :Unite -smartcase -start-insert -wipe history/yank<CR>'
 
-    execute 'nnoremap <leader>G :call manager#plugin#unite#GrepByUnite()<CR>'
+    execute 'nnoremap <leader>GG :call manager#plugin#unite#GrepByUnite()<CR>'
 endfunction

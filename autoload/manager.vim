@@ -16,8 +16,9 @@ function manager#ConfigureVim()
     call manager#plugin#Customize('nerdtree')
     call manager#plugin#Customize('nerdcomment')
     call manager#plugin#Customize('qfenter')
-
+    "call manager#plugin#Customize('interestingwords')
     "call manager#plugin#Customize('vimbookmarks')
+    "
     call manager#plugin#Customize('vifm')
     call manager#plugin#rainbow_parenthesisCustomize('rainbow_parenthesis')
 
