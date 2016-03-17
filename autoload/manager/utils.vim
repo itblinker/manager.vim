@@ -16,10 +16,9 @@ let s:arguments = s:arg_common.s:arg_include.s:arg_exclude
 function s:getGrepCmd(p_pattern, p_path)
     return 'grep! '.s:arguments.' -e '''.a:p_pattern.''' '.a:p_path
 endfunction
-
-endfunction
 "}}}
 
-function manager#utils#GrepVisualSelection()
-    execute s:getGrepCmd(manager#utils#GetFromVisualSelection(), getcwd())
+function manager#utils#Grep(p_pattern)
+    call maktaba#ensure#IsString(a:p_pattern)
+    execute s:getGrepCmd(a:p_pattern, getcwd())
 endfunction
