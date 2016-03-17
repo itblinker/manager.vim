@@ -23,6 +23,7 @@ function manager#utils#Grep(p_pattern)
     execute s:getGrepCmd(a:p_pattern, getcwd())
 endfunction
 
+
 function s:getListOfFiles(p_pattern)
     call maktaba#ensure#IsString(a:p_pattern)
     let l:cmd = 'find '.getcwd().' -name '''.a:p_pattern.''''
@@ -40,3 +41,15 @@ function manager#utils#FindAndOpenFile(p_pattern)
     endif
 endfunction
 
+"{{{ helper
+function s:fileOpener(p_patter)
+    let l:list = s:getListOfFiles(a:p_patter)
+    for file in l:list
+        execute 'e '.file
+    endfor
+endfunction
+"}}}
+function manager#utils#OpenSimilarFile()
+    let l:file_base = expand('%:t:r')
+    call s:fileOpener(l:file_base.'*')
+endfunction
