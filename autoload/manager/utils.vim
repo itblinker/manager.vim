@@ -22,3 +22,21 @@ function manager#utils#Grep(p_pattern)
     call maktaba#ensure#IsString(a:p_pattern)
     execute s:getGrepCmd(a:p_pattern, getcwd())
 endfunction
+
+function s:getListOfFiles(p_pattern)
+    call maktaba#ensure#IsString(a:p_pattern)
+    let l:cmd = 'find '.getcwd().' -name '''.a:p_pattern.''''
+    return split(system(l:cmd))
+endfunction
+
+function manager#utils#FindAndOpenFile(p_pattern)
+    let l:list = s:getListOfFiles(a:p_pattern)
+    if len(l:list)
+        for file in l:list
+            execute 'e '.file
+        endfor
+    else
+        execute 'echo ''file '.a:p_pattern.' not found in cwd'''
+    endif
+endfunction
+

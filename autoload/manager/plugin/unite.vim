@@ -79,7 +79,7 @@ function manager#plugin#unite#Mappings()
 
     execute 'nnoremap <leader>sa :Unite -smartcase -start-insert -wipe file_rec/async:!<CR>'
     execute 'nnoremap <leader>sm :Unite -smartcase -start-insert -wipe file_mru<CR>'
-    execute 'nnoremap <leader>b  :Unite -smartcase -start-insert -wipe buffer_tab:-<CR>'
+    execute 'nnorejap <leader>b  :Unite -smartcase -start-insert -wipe buffer_tab:-<CR>'
     execute 'nnoremap <leader>o  :Unite -smartcase -start-insert -wipe buffer:-<CR>'
 
     execute 'nnoremap <leader>p :Unite -smartcase -wipe jump<CR>'
