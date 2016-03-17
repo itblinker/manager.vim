@@ -53,42 +53,41 @@ endfunction
 
 
 function manager#plugin#unite#GetPreviewCommonSubSettings()
-    return  '-auto-preview -winheight=20 -previewheight=11'
+    return  ' -winheight=20 -previewheight=15'
 endfunction
 
 
-" TODO: use this function for all places! checkout the resume option in unite
-" add mapping / default action for p and P
-" in unite buffer map cprev/ cnext options
 function manager#plugin#unite#GrepByUnite()
     execute 'Unite -smartcase '.manager#plugin#unite#GetPreviewCommonSubSettings().' -buffer-name=''grep'' grep:.::'.expand('<cword>')
 endfunction
 
-function manager#plugin#unite#SetupGrepStartLocalization()
-    let l:path = getcwd()
-    if (exists('*ManagerUniteGrep'))
+
+function manager#plugin#unite#FindByUnite()
+    execute 'Unite -smartcase '.manager#plugin#unite#GetPreviewCommonSubSettings().' -buffer-name=''find'' find:.::'
 endfunction
 
 
 function manager#plugin#unite#Mappings()
     let g:unite_no_default_keymappings = 1
 
-    execute 'nnoremap <leader>M :Unite -smartcase -start-insert -wipe<CR>'
-    execute 'nnoremap <leader>RR :UniteResume -smartcase<CR>'
-    execute 'nnoremap <leader>RG :UniteResume ''grep''<CR>'
+    execute 'nnoremap <leader>u :Unite -smartcase -start-insert -wipe<CR>'
+    execute 'nnoremap <leader>ru :UniteResume -smartcase<CR>'
+    execute 'nnoremap <leader>rg :UniteResume ''grep''<CR>'
 
     execute 'nnoremap <leader>w :Unite -smartcase -wipe window<CR>'
     execute 'nnoremap <leader>t :Unite -smartcase -wipe tab<CR>'
 
-    execute 'nnoremap <leader>s :Unite -smartcase -start-insert -wipe file_rec/async:!<CR>'
-    execute 'nnoremap <leader>b :Unite -smartcase -start-insert -wipe buffer_tab:-<CR>'
-    execute 'nnoremap <leader>o :Unite -smartcase -start-insert -wipe buffer:-<CR>'
+    execute 'nnoremap <leader>sa :Unite -smartcase -start-insert -wipe file_rec/async:!<CR>'
+    execute 'nnoremap <leader>sm :Unite -smartcase -start-insert -wipe file_mru<CR>'
+    execute 'nnoremap <leader>b  :Unite -smartcase -start-insert -wipe buffer_tab:-<CR>'
+    execute 'nnoremap <leader>o  :Unite -smartcase -start-insert -wipe buffer:-<CR>'
 
     execute 'nnoremap <leader>p :Unite -smartcase -wipe jump<CR>'
     execute 'nnoremap <leader>e :Unite -smartcase -wipe change<CR>'
 
-    execute 'nnoremap <leader>c :Unite -smartcase -start-insert -wipe history/command<CR>'
-    execute 'nnoremap <leader>y :Unite -smartcase -start-insert -wipe history/yank<CR>'
+    execute 'nnoremap <leader>c :Unite -smartcase -wipe history/command<CR>'
+    execute 'nnoremap <leader>y :Unite -smartcase -wipe history/yank<CR>'
 
-    execute 'nnoremap <leader>GG :call manager#plugin#unite#GrepByUnite()<CR>'
+    execute 'nnoremap <leader>GW :call manager#plugin#unite#GrepByUnite()<CR>'
 endfunction
+

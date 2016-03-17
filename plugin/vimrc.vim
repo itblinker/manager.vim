@@ -93,6 +93,8 @@ noremap <silent> <up> :3wincmd -<cr>
 
 nnoremap td :tabclose <CR>
 
+vnoremap ,G :call manager#utils#GrepVisualSelection()<CR>
+
 set pastetoggle=<F2>
 "}}}
 "{{{ post configuration settings
