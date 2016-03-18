@@ -52,6 +52,9 @@ function s:fileOpener(p_patter)
 endfunction
 "}}}
 function manager#utils#OpenSimilarFile()
-    let l:file_base = expand('%:t:r')
-    call s:fileOpener(l:file_base.'*')
+    "let l:file_base = expand('%:t:r')
+    let l:file_base = substitute(expand('%:t:r'), 'I', '*', 'g')
+    call s:fileOpener(l:file_base.'TestSuite.*')
+    call s:fileOpener(l:file_base.'Mock.*')
+    call s:fileOpener(l:file_base.'Stub.*')
 endfunction

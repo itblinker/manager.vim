@@ -9,4 +9,5 @@ command RcEdit :e $MYVIMRC
 command RcSource :source $MYVIMRC
 
 command -nargs=1 Grepper :call manager#utils#RecursiveGrep(<f-args>)
-command -nargs=1 FindFile :call manager#utils#FindAndOpenFile(<f-args>)
+command -nargs=1 FindFileAndOpen :call manager#utils#FindAndOpenFile(<f-args>)
+command -nargs=1 FindGlobbedFileAndOpen : call manager#utils#FindAndOpenFile('*'.<f-args>.'*')
