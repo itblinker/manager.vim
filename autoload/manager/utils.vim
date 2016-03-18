@@ -13,14 +13,15 @@ let s:arg_include =' '
 let s:arg_exclude = ' --exclude-dir=.git --exclude-dir=.svn --exclude-dir=.bzr '
 let s:arguments = s:arg_common.s:arg_include.s:arg_exclude
 
-function s:getGrepCmd(p_pattern, p_path)
-    return 'grep! '.s:arguments.' -e '''.a:p_pattern.''' '.a:p_path
+function manager#utils#GetFGrepCmd(p_pattern, p_path, p_flags)
+    let l:pattern = escape(a:p_pattern, '%#!')
+    return 'grep! '.s:arguments.' -F '''.l:pattern.''' '.a:p_flags.' '.a:p_path
 endfunction
 "}}}
 
-function manager#utils#Grep(p_pattern)
+function manager#utils#RecursiveGrep(p_pattern)
     call maktaba#ensure#IsString(a:p_pattern)
-    execute s:getGrepCmd(a:p_pattern, getcwd())
+    execute manager#utils#GetFGrepCmd(a:p_pattern, getcwd(), ' -r ')
 endfunction
 
 
@@ -29,6 +30,7 @@ function s:getListOfFiles(p_pattern)
     let l:cmd = 'find '.getcwd().' -name '''.a:p_pattern.''''
     return split(system(l:cmd))
 endfunction
+
 
 function manager#utils#FindAndOpenFile(p_pattern)
     let l:list = s:getListOfFiles(a:p_pattern)
