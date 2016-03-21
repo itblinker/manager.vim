@@ -13,10 +13,18 @@ let s:arg_include =' '
 let s:arg_exclude = ' --exclude-dir=.git --exclude-dir=.svn --exclude-dir=.bzr '
 let s:arguments = s:arg_common.s:arg_include.s:arg_exclude
 
+
 function manager#utils#GetFGrepCmd(p_pattern, p_path, p_flags)
     let l:pattern = escape(a:p_pattern, '%#!')
     return 'grep! '.s:arguments.' -F '''.l:pattern.''' '.a:p_flags.' '.a:p_path
 endfunction
+
+
+function manager#utils#GrepFromPath(p_path, p_pattern)
+    "execute 'echo ''path is'.a:p_path.' pattern is '.a:p_pattern.''''
+    execute manager#utils#GetFGrepCmd(a:p_pattern, a:p_path, s:arg_common.s:arg_include)
+endfunction
+
 "}}}
 
 function manager#utils#RecursiveGrep(p_pattern)
