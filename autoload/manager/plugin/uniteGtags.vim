@@ -1,6 +1,6 @@
 function manager#plugin#uniteGtags#Settings()
     let g:unite_source_gtags_project_config = {
-                \ '_': { 'treelize': 1, 'uniteSource__Gtags_LineNr': 0, 'uniteSource__Gtags_Path': 1 }
+                \ '_': { 'treelize': 0, 'uniteSource__Gtags_LineNr': 0, 'uniteSource__Gtags_Path': 1 }
                 \ }
 endfunction
 
