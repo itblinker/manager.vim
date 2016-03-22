@@ -2,7 +2,8 @@ function manager#plugin#airline#Settings()
     let g:airline_theme='base16_summerfruit'
 
     let g:airline#extensions#tabline#enabled = 1
-    let g:airline#extensions#tabline#show_buffer = 1	"number of buffers per tab
+    let g:airline#extensions#tabline#show_tabs = 0
+    let g:airline#extensions#tabline#show_buffer = 0
     let g:airline#extensions#tabline#fnamemod = ':t'
     let g:airline#extensions#tabline#show_tab_nr = 0	"disable tab number
     let g:airline#extensions#tabline#left_sep = ' '

@@ -7,7 +7,7 @@ function manager#ConfigureVim()
     call manager#plugin#Customize('uniteGtags')
     call manager#plugin#Customize('uniteQuickFix')
 
-    call manager#plugin#Customize('airline')
+    "call manager#plugin#Customize('airline')
     call manager#plugin#Customize('bufferline')
     call manager#plugin#Customize('cppenhancedhighlits')
     call manager#plugin#Customize('easymotion')
