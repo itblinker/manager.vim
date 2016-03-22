@@ -51,18 +51,41 @@ function manager#utils#FindAndOpenFile(p_pattern)
     endif
 endfunction
 
-"{{{ helper
-function s:fileOpener(p_patter)
-    let l:list = s:getListOfFiles(a:p_patter)
-    for file in l:list
-        execute 'e '.file
-    endfor
+""{{{ helper
+"function s:fileOpener(p_patter)
+    "let l:list = s:getListOfFiles(a:p_patter)
+    "for file in l:list
+        "execute 'e '.file
+    "endfor
+"endfunction
+""}}}
+"function manager#utils#OpenSimilarFile()
+    ""let l:file_base = expand('%:t:r')
+    "let l:file_base = substitute(expand('%:t:r'), 'I', '*', 'g')
+    "call s:fileOpener(l:file_base.'TestSuite.*')
+    "call s:fileOpener(l:file_base.'Mock.*')
+    "call s:fileOpener(l:file_base.'Stub.*')
+"endfunction
+
+"{{{ find similiar file - helper functions
+function s:getFilenameWithoutExtension()
+    return expand('%:t:r')
+endfunction
+
+function s:replaceCharInString(p_string, p_char, p_finalChar)
+    return substitute(a:p_string, a:p_char, a:p_finalChar, '')
+endfunction
+
+function s:cutOffWordInString(p_string, p_word)
+    return substitute(a:p_string, a:p_word, '', '')
 endfunction
 "}}}
-function manager#utils#OpenSimilarFile()
-    "let l:file_base = expand('%:t:r')
-    let l:file_base = substitute(expand('%:t:r'), 'I', '*', 'g')
-    call s:fileOpener(l:file_base.'TestSuite.*')
-    call s:fileOpener(l:file_base.'Mock.*')
-    call s:fileOpener(l:file_base.'Stub.*')
+
+function manager#utils#GetBaseFilenameForFindSimiliarFunction()
+    let l:filename = s:getFilenameWithoutExtension()
+    let l:filename = s:cutOffWordInString(l:filename, 'TestSuite')
+    let l:filename = s:cutOffWordInString(l:filename, 'Mock')
+    let l:filename = s:cutOffWordInString(l:filename, 'Stub')
+
+    return s:replaceCharInString(l:filename, 'I', '*')
 endfunction

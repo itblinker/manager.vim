@@ -99,7 +99,6 @@ vnoremap > >gv
 vnoremap <leader>G :call manager#utils#RecursiveGrep(manager#utils#GetFromVisualSelection())<CR>
 vnoremap <leader>o :call manager#utils#FindAndOpenFile(manager#utils#GetFromVisualSelection())<CR>
 vnoremap <leader>g :call manager#utils#FindAndOpenFile('*'.manager#utils#GetFromVisualSelection().'*')<CR>
-nnoremap <leader>ss :call manager#utils#OpenSimilarFile()<CR>
 
 set pastetoggle=<F2>
 "}}}

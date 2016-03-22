@@ -63,9 +63,8 @@ endfunction
 
 
 function manager#plugin#unite#FindByUnite()
-    execute 'Unite -smartcase '.manager#plugin#unite#GetPreviewCommonSubSettings().' -buffer-name=''find'' find:.::'
+    execute 'Unite -smartcase '.manager#plugin#unite#GetPreviewCommonSubSettings().' -buffer-name=''find'' find:./:-name\ *'.manager#utils#GetBaseFilenameForFindSimiliarFunction().'*.*'
 endfunction
-
 
 function manager#plugin#unite#Mappings()
     let g:unite_no_default_keymappings = 1
@@ -73,12 +72,15 @@ function manager#plugin#unite#Mappings()
     execute 'nnoremap <leader>u :Unite -smartcase -start-insert -wipe<CR>'
     execute 'nnoremap <leader>ru :UniteResume -smartcase<CR>'
     execute 'nnoremap <leader>rg :UniteResume ''grep''<CR>'
+    execute 'nnoremap <leader>rf :UniteResume ''find''<CR>'
 
     execute 'nnoremap <leader>w :Unite -smartcase -wipe window<CR>'
     execute 'nnoremap <leader>t :Unite -smartcase -wipe tab<CR>'
 
     execute 'nnoremap <leader>sa :Unite -smartcase -start-insert -wipe file_rec/async:!<CR>'
     execute 'nnoremap <leader>sm :Unite -smartcase -start-insert -wipe file_mru<CR>'
+    execute 'nnoremap <leader>ss :call manager#plugin#unite#FindByUnite()<CR>'
+
     execute 'nnoremap <leader>b  :Unite -smartcase -start-insert -wipe buffer_tab:-<CR>'
     execute 'nnoremap <leader>o  :Unite -smartcase -start-insert -wipe buffer:-<CR>'
 
