@@ -16,6 +16,7 @@ function manager#ConfigureVim()
     call manager#plugin#Customize('nerdtree')
     call manager#plugin#Customize('nerdcomment')
     call manager#plugin#Customize('qfenter')
+    "call manager#plugin#Customize('hiCursorWord')
 
     "call manager#plugin#Customize('interestingwords')
     "call manager#plugin#Customize('vimbookmarks')

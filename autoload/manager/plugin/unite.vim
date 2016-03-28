@@ -86,6 +86,7 @@ function manager#plugin#unite#Mappings()
 
     execute 'nnoremap <leader>p :Unite -smartcase -wipe jump<CR>'
     execute 'nnoremap <leader>e :Unite -smartcase -wipe change<CR>'
+    execute 'nnoremap <leader>m :Unite -smartcase -wipe mark<CR>'
 
     execute 'nnoremap <leader>c :Unite -smartcase -wipe history/command<CR>'
     execute 'nnoremap <leader>y :Unite -smartcase -wipe history/yank<CR>'

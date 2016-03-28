@@ -21,7 +21,6 @@ endfunction
 
 
 function manager#utils#GrepFromPath(p_path, p_pattern)
-    "execute 'echo ''path is'.a:p_path.' pattern is '.a:p_pattern.''''
     execute manager#utils#GetFGrepCmd(a:p_pattern, a:p_path, s:arg_common.s:arg_include)
 endfunction
 
