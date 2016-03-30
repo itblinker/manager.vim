@@ -1,5 +1,4 @@
-set number
-set relativenumber
+setlocal number
 
 nmap <buffer> q <Plug>(unite_exit)
 nmap <buffer> Q <Plug>(unite_all_exit)

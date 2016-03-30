@@ -3,7 +3,4 @@ setlocal shiftwidth=4    "when you shift by >> or << it'll shift using this numb
 setlocal shiftround      "it'll keep all alignment by tabstop and shiftwidth
 setlocal expandtab       "tab will be replaced by spaces
 
-set number
-set relativenumber
-
 setlocal nowrap

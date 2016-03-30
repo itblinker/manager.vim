@@ -25,6 +25,7 @@ function manager#ConfigureVim()
     call manager#plugin#Customize('rainbowParenthesis')
     call manager#plugin#Customize('bufsurf')
 
+    call manager#plugin#Customize('simplenote')
     "call manager#plugin#Customize('easygit')
     "call manager#plugin#Customize('unitesession')
     "call manager#plugin#Customize('editgq')

@@ -37,7 +37,7 @@ set noswapfile
 
 set linebreak
 set number
-set relativenumber
+"set relativenumber
 
 set ttimeoutlen=10
 
@@ -101,8 +101,6 @@ vnoremap <leader>o :call manager#utils#FindAndOpenFile(manager#utils#GetFromVisu
 vnoremap <leader>g :call manager#utils#FindAndOpenFile('*'.manager#utils#GetFromVisualSelection().'*')<CR>
 
 set pastetoggle=<F2>
-"}}}
-"{{{ post configuration settings
+
 silent! call manager#ConfigureVim()
 silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
-"}}}
