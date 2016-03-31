@@ -6,9 +6,9 @@ function manager#plugin#nerdtree#Settings()
 endfunction
 
 function manager#plugin#nerdtree#Mappings()
-    execute 'nnoremap <leader>N :NERDTreeCWD<CR>'
-    execute 'nnoremap <leader>T :NERDTreeFind<CR>'
-    execute 'command MFnerdTreeQuitToggle :call manager#plugin#nerdtree#QuitToggle()'
+    nnoremap <leader>N :NERDTreeCWD<CR>'
+    nnoremap <leader>T :NERDTreeFind<CR>'
+
     let g:NERDTreeMapOpenSplit='s'
     let g:NERDTreeMapOpenVSplit='S'
 endfunction

@@ -9,7 +9,7 @@ function manager#plugin#vimbookmarks#Settings()
 endfunction
 
 function manager#plugin#vimbookmarks#Mappings()
-    execute 'noremap <leader>mt :BookmarkToggle<CR>'
-    execute 'noremap <leader>mn :BookmarkAnnotate<CR>'
-    execute 'noremap <leader>md :BookmarkClear<CR>'
+    noremap <leader>mt :BookmarkToggle<CR>
+    noremap <leader>mn :BookmarkAnnotate<CR>
+    noremap <leader>md :BookmarkClear<CR>
 endfunction

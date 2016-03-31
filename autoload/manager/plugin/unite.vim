@@ -69,29 +69,30 @@ endfunction
 function manager#plugin#unite#Mappings()
     let g:unite_no_default_keymappings = 1
 
-    execute 'nnoremap <leader>u :Unite -smartcase -start-insert -wipe<CR>'
-    execute 'nnoremap <leader>ru :UniteResume -smartcase<CR>'
-    execute 'nnoremap <leader>rg :UniteResume ''grep''<CR>'
-    execute 'nnoremap <leader>rf :UniteResume ''find''<CR>'
+    nnoremap <leader>u :Unite -smartcase -start-insert -wipe<CR>
+    nnoremap <leader>ru :UniteResume -smartcase<CR>
+    nnoremap <leader>rg :UniteResume 'grep'<CR>
+    nnoremap <leader>rf :UniteResume 'find'<CR>
 
-    execute 'nnoremap <leader>w :Unite -smartcase -wipe window<CR>'
-    execute 'nnoremap <leader>t :Unite -smartcase -wipe tab<CR>'
+    nnoremap <leader>w :Unite -smartcase -wipe window<CR>
+    nnoremap <leader>t :Unite -smartcase -wipe tab<CR>
 
-    execute 'nnoremap <leader>sa :Unite -smartcase -start-insert -wipe file_rec/async:!<CR>'
-    execute 'nnoremap <leader>sm :Unite -smartcase -start-insert -wipe file_mru<CR>'
+    nnoremap <leader>sa :Unite -smartcase -start-insert -wipe file_rec/async:!<CR>
+    nnoremap <leader>sm :Unite -smartcase -start-insert -wipe file_mru<CR>
+
+
+    nnoremap <leader>b  :Unite -smartcase -start-insert -wipe buffer_tab:-<CR>
+    nnoremap <leader>o  :Unite -smartcase -start-insert -wipe buffer:-<CR>
+
+    nnoremap <leader>p :Unite -smartcase -wipe jump<CR>
+    nnoremap <leader>e :Unite -smartcase -wipe change<CR>
+    nnoremap <leader>mm :Unite -smartcase -wipe mark<CR>
+    nnoremap <leader>mb :Unite -smartcase -wipe vim_bookmarks<CR>
+
+    nnoremap <leader>c :Unite -smartcase -wipe history/command<CR>
+    nnoremap <leader>y :Unite -smartcase -wipe history/yank<CR>
+
     execute 'nnoremap <leader>ss :call manager#plugin#unite#FindByUnite()<CR>'
-
-    execute 'nnoremap <leader>b  :Unite -smartcase -start-insert -wipe buffer_tab:-<CR>'
-    execute 'nnoremap <leader>o  :Unite -smartcase -start-insert -wipe buffer:-<CR>'
-
-    execute 'nnoremap <leader>p :Unite -smartcase -wipe jump<CR>'
-    execute 'nnoremap <leader>e :Unite -smartcase -wipe change<CR>'
-    execute 'nnoremap <leader>mm :Unite -smartcase -wipe mark<CR>'
-    execute 'nnoremap <leader>mb :Unite -smartcase -wipe vim_bookmarks<CR>'
-
-    execute 'nnoremap <leader>c :Unite -smartcase -wipe history/command<CR>'
-    execute 'nnoremap <leader>y :Unite -smartcase -wipe history/yank<CR>'
-
     execute 'nnoremap <leader>GW :call manager#plugin#unite#GrepByUnite()<CR>'
 endfunction
 

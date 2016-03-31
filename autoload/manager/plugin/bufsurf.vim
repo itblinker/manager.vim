@@ -2,6 +2,6 @@ function manager#plugin#bufsurf#Settings()
 endfunction
 
 function manager#plugin#bufsurf#Mappings()
-    execute 'nnoremap <leader>< :BufSurfBack<CR>'
-    execute 'nnoremap <leader>> :BufSurfForward<CR>'
+    nnoremap <leader>< :BufSurfBack<CR>
+    nnoremap <leader>> :BufSurfForward<CR>
 endfunction

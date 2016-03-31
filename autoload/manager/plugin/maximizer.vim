@@ -3,7 +3,7 @@ function manager#plugin#maximizer#Settings()
 endfunction
 
 function manager#plugin#maximizer#Mappings()
-    execute 'nnoremap <silent><leader>z :MaximizerToggle<CR>'
-    execute 'vnoremap <silent><leader>z :MaximizerToggle<CR>gv'
-    execute 'inoremap <silent><leader>z <C-o>:MaximizerToggle<CR>'
+    nnoremap <silent><leader>z :MaximizerToggle<CR>
+    noremap <silent><leader>z :MaximizerToggle<CR>gv
+    noremap <silent><leader>z <C-o>:MaximizerToggle<CR>
 endfunction

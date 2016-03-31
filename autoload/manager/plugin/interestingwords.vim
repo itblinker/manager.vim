@@ -6,10 +6,10 @@ function manager#plugin#interestingwords#Settings()
 endfunction
 
 function manager#plugin#interestingwords#Mappings()
-    execute 'nnoremap <silent> <leader>h :call InterestingWords(''n'')<cr>'
-    execute 'nnoremap <silent> <leader>H :call UncolorAllWords()<cr>'
+    nnoremap <silent> <leader>h :call InterestingWords('n')<cr>
+    nnoremap <silent> <leader>H :call UncolorAllWords()<cr>'
 
-    execute 'nnoremap <silent> <leader>hn :call WordNavigation(''forward'')<cr>'
-    execute 'nnoremap <silent> <leader>hN :call WordNavigation(''backward'')<cr>'
+    nnoremap <silent> <leader>hn :call WordNavigation('forward')<cr>
+    nnoremap <silent> <leader>hN :call WordNavigation('backward')<cr>
 endfunction
 

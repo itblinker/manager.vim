@@ -5,6 +5,6 @@ function manager#plugin#ctrlptjump#Settings()
 endfunction
 
 function manager#plugin#ctrlptjump#Mappings()
-    execute 'nnoremap <c-]> :CtrlPtjump<cr>'
-    execute 'vnoremap <c-]> :CtrlPtjumpVisual<cr>'
+    nnoremap <c-]> :CtrlPtjump<cr>
+    noremap <c-]> :CtrlPtjumpVisual<cr>
 endfunction
