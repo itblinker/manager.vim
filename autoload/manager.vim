@@ -19,7 +19,7 @@ function manager#ConfigureVim()
     "call manager#plugin#Customize('hiCursorWord')
 
     "call manager#plugin#Customize('interestingwords')
-    "call manager#plugin#Customize('vimbookmarks')
+    call manager#plugin#Customize('vimbookmarks')
 
     call manager#plugin#Customize('vifm')
     call manager#plugin#Customize('rainbowParenthesis')
