@@ -102,5 +102,4 @@ vnoremap <leader>g :call manager#utils#FindAndOpenFile('*'.manager#utils#GetFrom
 
 set pastetoggle=<F2>
 
-silent! call manager#ConfigureVim()
-silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
+call manager#ConfigureVim()

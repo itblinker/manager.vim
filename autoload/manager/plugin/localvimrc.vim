@@ -1,4 +1,4 @@
-function manager#plugin#localvimrc#Settings()
+function s:settings()
     let g:localvimrc_file = "project_settings.vim"
     let g:localvimrc_event = ["VimEnter"]
 
@@ -9,5 +9,7 @@ function manager#plugin#localvimrc#Settings()
     "let g:localvimrc_file_dir  = getcwd().'/.store.vim'
 endfunction
 
-function manager#plugin#localvimrc#Mappings()
+
+function manager#plugin#localvimrc#Setup()
+    call s:settings()
 endfunction

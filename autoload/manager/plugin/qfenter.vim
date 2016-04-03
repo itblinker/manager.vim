@@ -1,11 +1,17 @@
-function manager#plugin#qfenter#Settings()
-    let g:editqf_no_mappings = 1
-    let g:editqf_no_type_mappings = 1
+function s:settings()
+    let g:qfenter_enable_autoquickfix = 0
 endfunction
 
-function manager#plugin#qfenter#Mappings()
+function s:mappings()
     let g:qfenter_open_map = ['o']
     let g:qfenter_vopen_map = ['S']
     let g:qfenter_hopen_map = ['s']
     let g:qfenter_topen_map = ['t']
 endfunction
+
+
+function manager#plugin#qfenter#Setup()
+    call s:settings()
+    call s:mappings()
+endfunction
+

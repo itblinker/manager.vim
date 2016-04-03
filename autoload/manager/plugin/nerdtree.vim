@@ -1,11 +1,11 @@
-function manager#plugin#nerdtree#Settings()
+function s:settings()
     let g:NERDTreeHighlightCursorline = 1
     let g:NERDTreeBookmarksFile = "./.cache/nerdtree-bookmarks.vim"
     let g:NERDTreeShowBookmarks = 1
     let g:NERDTreeQuitOnOpen = 1
 endfunction
 
-function manager#plugin#nerdtree#Mappings()
+function s:mappings()
     nnoremap <leader>N :NERDTreeCWD<CR>'
     nnoremap <leader>T :NERDTreeFind<CR>'
 
@@ -13,10 +13,8 @@ function manager#plugin#nerdtree#Mappings()
     let g:NERDTreeMapOpenVSplit='S'
 endfunction
 
-function manager#plugin#nerdtree#QuitToggle()
-    if(g:NERDTreeQuitOnOpen)
-        let g:NERDTreeQuitOnOpen = 0
-    else
-        let g:NERDTreeQuitOnOpen = 1
-    endif
+
+function manager#plugin#nerdtree#Setup()
+    call s:settings()
+    call s:mappings()
 endfunction

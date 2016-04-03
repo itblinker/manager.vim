@@ -24,7 +24,7 @@ endfunction
 
 
 function manager#plugin#unite#Paths()
-    let g:unite_data_directory = g:manager_db_dir.'/unite'
+    let g:unite_data_directory = g:vim_manager_home_dir.'/unite'
 endfunction
 
 
@@ -42,7 +42,7 @@ function manager#plugin#unite#Matching()
 endfunction
 
 
-function manager#plugin#unite#Settings()
+function s:settings()
     call manager#plugin#unite#Matching()
     call manager#plugin#unite#Paths()
     call manager#plugin#unite#Cache()
@@ -66,7 +66,7 @@ function manager#plugin#unite#FindByUnite()
     execute 'Unite -smartcase '.manager#plugin#unite#GetPreviewCommonSubSettings().' -buffer-name=''find'' find:./:-name\ *'.manager#utils#GetBaseFilenameForFindSimiliarFunction().'*.*'
 endfunction
 
-function manager#plugin#unite#Mappings()
+function s:mappings()
     let g:unite_no_default_keymappings = 1
 
     nnoremap <leader>u :Unite -smartcase -start-insert -wipe<CR>
@@ -96,3 +96,7 @@ function manager#plugin#unite#Mappings()
     execute 'nnoremap <leader>GW :call manager#plugin#unite#GrepByUnite()<CR>'
 endfunction
 
+function manager#plugin#unite#Setup()
+    call s:settings()
+    call s:mappings()
+endfunction

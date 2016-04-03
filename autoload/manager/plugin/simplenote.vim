@@ -1,7 +1,9 @@
-function manager#plugin#simplenote#Settings()
+function s:settings()
     source $MF_HOST_SETTINGS_PRIVATE_DIRECTORY/simplenote.vim
 endfunction
 
 
-function manager#plugin#simplenote#Mappings()
+function manager#plugin#simplenote#Setup()
+    call s:settings()
 endfunction
+

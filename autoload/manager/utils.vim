@@ -28,7 +28,7 @@ endfunction
 
 function manager#utils#RecursiveGrep(p_pattern)
     call maktaba#ensure#IsString(a:p_pattern)
-    execute manager#utils#GetFGrepCmd(a:p_pattern, getcwd(), ' -r ')
+    execute manager#utils#GetFGrepCmd(a:p_pattern, getcwd(), ' ')
 endfunction
 
 
@@ -49,22 +49,6 @@ function manager#utils#FindAndOpenFile(p_pattern)
         execute 'echo ''file '.a:p_pattern.' not found in cwd'''
     endif
 endfunction
-
-""{{{ helper
-"function s:fileOpener(p_patter)
-    "let l:list = s:getListOfFiles(a:p_patter)
-    "for file in l:list
-        "execute 'e '.file
-    "endfor
-"endfunction
-""}}}
-"function manager#utils#OpenSimilarFile()
-    ""let l:file_base = expand('%:t:r')
-    "let l:file_base = substitute(expand('%:t:r'), 'I', '*', 'g')
-    "call s:fileOpener(l:file_base.'TestSuite.*')
-    "call s:fileOpener(l:file_base.'Mock.*')
-    "call s:fileOpener(l:file_base.'Stub.*')
-"endfunction
 
 "{{{ find similiar file - helper functions
 function s:getFilenameWithoutExtension()
@@ -88,3 +72,43 @@ function manager#utils#GetBaseFilenameForFindSimiliarFunction()
 
     return s:replaceCharInString(l:filename, 'I', '*')
 endfunction
+
+
+function manager#utils#GetBufferList()
+  redir =>buflist
+  silent! ls
+  redir END
+  return buflist
+endfunction
+
+
+function manager#utils#OlderList()
+    if manager#utils#IsLocationList()
+       lolder
+   else
+       colder
+    endif
+endfunction
+
+
+function manager#utils#NewerList()
+    if manager#utils#IsLocationList()
+        lnewer
+    else
+        cnewer
+    endif
+endfunction
+
+
+function manager#utils#IsLocationList()
+    let curbufnr = winbufnr(0)
+    for bufnum in map(filter(split(manager#utils#GetBufferList(), '\n'), 'v:val =~ "Location List"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
+        if curbufnr == bufnum
+            return 1
+        endif
+    endfor
+    return 0
+endfunction
+
+
+

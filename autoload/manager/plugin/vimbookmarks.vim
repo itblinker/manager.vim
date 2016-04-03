@@ -1,4 +1,4 @@
-function manager#plugin#vimbookmarks#Settings()
+function s:settings()
     let g:bookmark_save_per_working_dir = 1
     let g:bookmark_auto_save = 1
     let g:bookmark_manage_per_buffer = 1
@@ -8,8 +8,14 @@ function manager#plugin#vimbookmarks#Settings()
     let g:bookmark_no_default_key_mappings = 1
 endfunction
 
-function manager#plugin#vimbookmarks#Mappings()
+function s:mappings()
     noremap <leader>mt :BookmarkToggle<CR>
     noremap <leader>mn :BookmarkAnnotate<CR>
     noremap <leader>md :BookmarkClear<CR>
+endfunction
+
+
+function manager#plugin#vimbookmarks#Setup()
+    call s:settings()
+    call s:mappings()
 endfunction
