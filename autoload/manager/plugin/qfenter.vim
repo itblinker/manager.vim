@@ -1,5 +1,11 @@
 function s:settings()
     let g:qfenter_enable_autoquickfix = 0
+
+    let g:qfenter_keep_quickfixfocus = {
+                \'open':  0,
+                \'cnext': 0,
+                \'cprev': 0,
+                \}
 endfunction
 
 function s:mappings()

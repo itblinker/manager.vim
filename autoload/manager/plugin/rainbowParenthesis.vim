@@ -12,11 +12,6 @@ function s:settings()
                 \ ['red',         'firebrick3']
                 \ ]
 
-                "\ ['Darkblue',    'SeaGreen3'],
-                "\ ['darkgray',    'DarkOrchid3'],
-                "\ ['black',       'SeaGreen3'],
-                "\ ['darkgreen',   'RoyalBlue3'],
-
     let g:rbpt_max = 16
     let g:rbpt_loadcmd_toggle = 0
 

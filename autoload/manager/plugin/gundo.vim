@@ -1,6 +1,6 @@
 function s:settings()
-    let g:gundo_width = 70
-    let g:gundo_preview_height = 30
+    let g:gundo_width = 60
+    let g:gundo_preview_height = 20
 endfunction
 
 function s:mappings()

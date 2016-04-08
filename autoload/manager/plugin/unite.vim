@@ -83,6 +83,7 @@ function s:mappings()
 
     nnoremap <leader>b  :Unite -smartcase -start-insert -wipe buffer_tab:-<CR>
     nnoremap <leader>o  :Unite -smartcase -start-insert -wipe buffer:-<CR>
+    nnoremap <leader>a  :Unite -smartcase -start-insert -wipe buffer<CR>
 
     nnoremap <leader>p :Unite -smartcase -wipe jump<CR>
     nnoremap <leader>e :Unite -smartcase -wipe change<CR>

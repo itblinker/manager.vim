@@ -34,6 +34,7 @@ endfunction
 
 function s:getListOfFiles(p_pattern)
     call maktaba#ensure#IsString(a:p_pattern)
+    call maktaba#string#Strip(a:p_pattern)
     let l:cmd = 'find '.getcwd().' -name '''.a:p_pattern.''''
     return split(system(l:cmd))
 endfunction

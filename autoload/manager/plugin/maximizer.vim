@@ -3,9 +3,7 @@ function s:settings()
 endfunction
 
 function s:mappings()
-    nnoremap <silent><leader>z :MaximizerToggle<CR>
-    noremap <silent><leader>z :MaximizerToggle<CR>gv
-    noremap <silent><leader>z <C-o>:MaximizerToggle<CR>
+    nnoremap <silent><leader>Z :MaximizerToggle<CR>
 endfunction
 
 function manager#plugin#maximizer#Setup()

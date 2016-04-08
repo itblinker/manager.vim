@@ -3,7 +3,6 @@ function manager#ConfigureVim()
     call maktaba#json#python#Disable()
     call manager#vim#PathsConfiguration()
 
-    call manager#plugin#vimpad#Setup()
     call manager#plugin#unite#Setup()
     call manager#plugin#uniteTags#Settings()
     call manager#plugin#uniteGtags#Setup()
@@ -20,6 +19,7 @@ function manager#ConfigureVim()
     call manager#plugin#vifm#Setup()
     call manager#plugin#rainbowParenthesis#Setup()
     call manager#plugin#bufsurf#Setup()
-    call manager#plugin#simplenote#Setup()
+    call manager#plugin#vimpad#Setup()
+    call manager#plugin#vimwiki#Setup()
 
 endfunction
