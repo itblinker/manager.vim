@@ -9,9 +9,9 @@ function s:settings()
 endfunction
 
 function s:mappings()
-    noremap <leader>mt :BookmarkToggle<CR>
-    noremap <leader>mn :BookmarkAnnotate<CR>
-    noremap <leader>md :BookmarkClear<CR>
+    noremap mt :BookmarkToggle<CR>
+    noremap mn :BookmarkAnnotate<CR>
+    noremap md :BookmarkClear<CR>
 endfunction
 
 

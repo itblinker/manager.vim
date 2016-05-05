@@ -111,5 +111,42 @@ function manager#utils#IsLocationList()
     return 0
 endfunction
 
+"{{{ implementation from https://svn.apache.org/repos/asf/subversion/trunk/contrib/client-side/vim/vim-blame.vimrc
+"Show the Subversion 'blame' annotation for the current file, in a narrow
+"  window to the left of it.
+"Usage:
+"  'gb' or ':Blame'
+"  To get rid of it, close or delete the annotation buffer.
+"Bugs:
+"  If the source file buffer has unsaved changes, these aren't noticed and
+"    the annotations won't align properly. Should either warn or preferably
+"    annotate the actual buffer contents rather than the last saved version.
+"  When annotating the same source file again, it creates a new annotation
+"    buffer. It should re-use the existing one if it still exists.
+"Possible enhancements:
+"  When invoked on a revnum in a Blame window, re-blame same file up to the
+"    previous revision.
+"  Dynamically synchronize when edits are made to the source file
+"}}}
+function manager#utils#SvnBlame()
+   let line = line(".")
+   setlocal nowrap
 
+   "aboveleft 18vnew
+   vertical 18vnew
+
+   " blame, ignoring white space changes
+   %!svn blame -x-w "#"
+   setlocal nomodified readonly buftype=nofile nowrap winwidth=1
+   setlocal nonumber
+
+   if has('&relativenumber') | setlocal norelativenumber | endif
+
+   exec "normal " . line . "G"
+
+   setlocal scrollbind
+   wincmd p
+   setlocal scrollbind
+   syncbind
+endfunction
 

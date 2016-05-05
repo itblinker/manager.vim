@@ -80,20 +80,18 @@ function s:mappings()
     nnoremap <leader>sa :Unite -smartcase -start-insert -wipe file_rec/async:!<CR>
     nnoremap <leader>sm :Unite -smartcase -start-insert -wipe file_mru<CR>
 
+    nnoremap <leader>bb  :Unite -smartcase -start-insert -wipe buffer_tab:-<CR>
+    nnoremap <leader>bf  :Unite -smartcase -start-insert -wipe buffer:-<CR>
+    nnoremap <leader>ba  :Unite -smartcase -start-insert -wipe buffer<CR>
 
-    nnoremap <leader>b  :Unite -smartcase -start-insert -wipe buffer_tab:-<CR>
-    nnoremap <leader>o  :Unite -smartcase -start-insert -wipe buffer:-<CR>
-    nnoremap <leader>a  :Unite -smartcase -start-insert -wipe buffer<CR>
+    nnoremap <leader>p :Unite -smartcase -start-insert -wipe jump<CR>
+    nnoremap <leader>e :Unite -smartcase -start-insert -wipe change<CR>
+    nnoremap <leader>m :Unite -smartcase -start-insert -wipe mark vim_bookmarks<CR>
 
-    nnoremap <leader>p :Unite -smartcase -wipe jump<CR>
-    nnoremap <leader>e :Unite -smartcase -wipe change<CR>
-    nnoremap <leader>mm :Unite -smartcase -wipe mark<CR>
-    nnoremap <leader>mb :Unite -smartcase -wipe vim_bookmarks<CR>
+    nnoremap <leader>c :Unite -smartcase -start-insert -wipe history/command<CR>
+    nnoremap <leader>y :Unite -smartcase -start-insert -wipe history/yank<CR>
 
-    nnoremap <leader>c :Unite -smartcase -wipe history/command<CR>
-    nnoremap <leader>y :Unite -smartcase -wipe history/yank<CR>
-
-    execute 'nnoremap <leader>ss :call manager#plugin#unite#FindByUnite()<CR>'
+    execute 'nnoremap<leader>ss :call manager#plugin#unite#FindByUnite()<CR>'
     execute 'nnoremap <leader>GW :call manager#plugin#unite#GrepByUnite()<CR>'
 endfunction
 
