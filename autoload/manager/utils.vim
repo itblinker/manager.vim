@@ -74,6 +74,32 @@ function manager#utils#GetBaseFilenameForFindSimiliarFunction()
     return s:replaceCharInString(l:filename, 'I', '*')
 endfunction
 
+function s:flipExtensionForCLanguageSourceFile(p_extenstion)
+    if a:p_extenstion == 'cpp'
+        return 'hpp'
+    elseif a:p_extenstion == 'hpp'
+        return 'cpp'
+    elseif a:p_extenstion = 'c'
+        return 'h'
+    elseif a:p_extenstion = 'h'
+        return 'c'
+    else
+        return ''
+    endif
+endfunction
+
+function manager#utils#GetHeaderOrSourceFilename()
+    let l:filename = s:getFilenameWithoutExtension()
+    let l:extension = expand('%:e')
+
+    let l:flippedExtension = s:flipExtensionForCLanguageSourceFile(l:extension)
+    if len(l:flippedExtension)
+        return l:filename.'.'.l:flippedExtension
+    else
+        return l:filename
+    endif
+endfunction
+
 
 function manager#utils#GetBufferList()
   redir =>buflist
@@ -128,25 +154,25 @@ endfunction
 "    previous revision.
 "  Dynamically synchronize when edits are made to the source file
 "}}}
-function manager#utils#SvnBlame()
-   let line = line(".")
-   setlocal nowrap
+"function manager#utils#SvnBlame()
+   "let line = line(".")
+   "setlocal nowrap
 
-   "aboveleft 18vnew
-   vertical 18vnew
+   ""aboveleft 18vnew
+   "vertical 18vnew
 
-   " blame, ignoring white space changes
-   %!svn blame -x-w "#"
-   setlocal nomodified readonly buftype=nofile nowrap winwidth=1
-   setlocal nonumber
+   "" blame, ignoring white space changes
+   "%!svn blame -x-w "#"
+   "setlocal nomodified readonly buftype=nofile nowrap winwidth=1
+   "setlocal nonumber
 
-   if has('&relativenumber') | setlocal norelativenumber | endif
+   "if has('&relativenumber') | setlocal norelativenumber | endif
 
-   exec "normal " . line . "G"
+   "exec "normal " . line . "G"
 
-   setlocal scrollbind
-   wincmd p
-   setlocal scrollbind
-   syncbind
-endfunction
+   "setlocal scrollbind
+   "wincmd p
+   "setlocal scrollbind
+   "syncbind
+"endfunction
 

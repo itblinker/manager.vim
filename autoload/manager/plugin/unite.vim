@@ -62,9 +62,14 @@ function manager#plugin#unite#GrepByUnite()
 endfunction
 
 
-function manager#plugin#unite#FindByUnite()
+function manager#plugin#unite#FindSimiliarFilesByUnite()
     execute 'Unite -smartcase '.manager#plugin#unite#GetPreviewCommonSubSettings().' -buffer-name=''find'' find:./:-name\ *'.manager#utils#GetBaseFilenameForFindSimiliarFunction().'*.*'
 endfunction
+
+function manager#plugin#unite#FindSourceOrHeaderFileByUnite()
+    execute 'Unite -smartcase '.manager#plugin#unite#GetPreviewCommonSubSettings().' -buffer-name=''find'' find:./:-name\ '.manager#utils#GetHeaderOrSourceFilename()
+endfunction
+
 
 function s:mappings()
     let g:unite_no_default_keymappings = 1
@@ -91,7 +96,8 @@ function s:mappings()
     nnoremap <leader>c :Unite -smartcase -start-insert -wipe history/command<CR>
     nnoremap <leader>y :Unite -smartcase -start-insert -wipe history/yank<CR>
 
-    execute 'nnoremap<leader>ss :call manager#plugin#unite#FindByUnite()<CR>'
+    execute 'nnoremap <leader>ss :call manager#plugin#unite#FindSimiliarFilesByUnite()<CR>'
+    execute 'nnoremap <leader>sf :call manager#plugin#unite#FindSourceOrHeaderFileByUnite()<CR>'
     execute 'nnoremap <leader>GW :call manager#plugin#unite#GrepByUnite()<CR>'
 endfunction
 
