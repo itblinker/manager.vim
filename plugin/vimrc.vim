@@ -96,7 +96,7 @@ nnoremap td :tabclose <CR>
 vnoremap < <gv
 vnoremap > >gv
 
-vnoremap <leader>G :call manager#utils#RecursiveGrep(manager#utils#GetFromVisualSelection())<CR>
+vnoremap <leader>G :call manager#utils#GrepFromPath(manager#utils#GetFromVisualSelection(), getcwd())<CR>
 vnoremap <leader>o :call manager#utils#FindAndOpenFile(manager#utils#GetFromVisualSelection())<CR>
 vnoremap <leader>g :call manager#utils#FindAndOpenFile('*'.manager#utils#GetFromVisualSelection().'*')<CR>
 

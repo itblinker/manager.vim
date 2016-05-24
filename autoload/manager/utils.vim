@@ -13,6 +13,11 @@ let s:arg_include =' '
 let s:arg_exclude = ' --exclude-dir=.git --exclude-dir=.svn --exclude-dir=.bzr '
 let s:arguments = s:arg_common.s:arg_include.s:arg_exclude
 
+let s:find_arguments = ' -type f  \! -path ''.git'' \! -path ''.svn'' '
+
+function s:getFindArguments(p_filename)
+    return ' -type f -name '.a:p_filename.' \! -path *.svn* \! -path *.git*'
+endfunction
 
 function manager#utils#GetFGrepCmd(p_pattern, p_path, p_flags)
     let l:pattern = escape(a:p_pattern, '%#!')
@@ -20,28 +25,33 @@ function manager#utils#GetFGrepCmd(p_pattern, p_path, p_flags)
 endfunction
 
 
-function manager#utils#GrepFromPath(p_path, p_pattern)
-    execute manager#utils#GetFGrepCmd(a:p_pattern, a:p_path, s:arg_common.s:arg_include)
+function manager#utils#GrepFromPath(...)
+    if a:0 == 2
+        execute manager#utils#GetFGrepCmd(a:1, a:2, s:arg_common.s:arg_include)
+    else
+        execute manager#utils#GetFGrepCmd(a:1, getcwd(), s:arg_common.s:arg_include)
+    endif
 endfunction
 
 "}}}
 
-function manager#utils#RecursiveGrep(p_pattern)
-    call maktaba#ensure#IsString(a:p_pattern)
-    execute manager#utils#GetFGrepCmd(a:p_pattern, getcwd(), ' ')
-endfunction
-
-
-function s:getListOfFiles(p_pattern)
+function s:getListOfFiles(p_pattern, p_path)
     call maktaba#ensure#IsString(a:p_pattern)
     call maktaba#string#Strip(a:p_pattern)
-    let l:cmd = 'find '.getcwd().' -name '''.a:p_pattern.''''
+    let l:cmd = 'find '.a:p_path.' '.s:getFindArguments(a:p_pattern)
     return split(system(l:cmd))
 endfunction
 
 
-function manager#utils#FindAndOpenFile(p_pattern)
-    let l:list = s:getListOfFiles(a:p_pattern)
+function manager#utils#FindAndOpenFile(...)
+    let l:list = []
+
+    if a:0 == 2
+        let l:list = s:getListOfFiles(a:1, a:2)
+    else
+        let l:list = s:getListOfFiles(a:1, getcwd())
+    endif
+
     if len(l:list)
         for file in l:list
             execute 'e '.file
