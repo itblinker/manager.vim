@@ -51,6 +51,9 @@ function s:settings()
     call manager#plugin#unite#Yank()
 endfunction
 
+function manager#plugin#unite#GtagInheritanceInput()
+    return  escape(' -input=class|struct|public|protected|private ', '|')
+endfunction
 
 function manager#plugin#unite#GetPreviewCommonSubSettings()
     return  ' -winheight=20 -previewheight=15'
@@ -70,6 +73,9 @@ function manager#plugin#unite#FindSourceOrHeaderFileByUnite()
     execute 'Unite -smartcase '.manager#plugin#unite#GetPreviewCommonSubSettings().' -buffer-name=''find'' find:./:-name\ '.manager#utils#GetHeaderOrSourceFilename()
 endfunction
 
+function manager#plugin#unite#MruSourcesinCwd()
+    execute 'Unite -smartcase -start-insert -wipe -input='.getcwd().'** file_mru'
+endfunction
 
 function s:mappings()
     let g:unite_no_default_keymappings = 1
@@ -83,7 +89,7 @@ function s:mappings()
     nnoremap <leader>t :Unite -smartcase -wipe tab<CR>
 
     nnoremap <leader>sa :Unite -smartcase -start-insert -wipe file_rec/async:!<CR>
-    nnoremap <leader>sm :Unite -smartcase -start-insert -wipe file_mru<CR>
+    execute 'nnoremap <leader>sm :call manager#plugin#unite#MruSourcesinCwd()<CR>'
 
     nnoremap <leader>bb  :Unite -smartcase -start-insert -wipe buffer_tab:-<CR>
     nnoremap <leader>bf  :Unite -smartcase -start-insert -wipe buffer:-<CR>
