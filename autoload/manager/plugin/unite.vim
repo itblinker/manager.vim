@@ -77,6 +77,24 @@ function manager#plugin#unite#MruSourcesinCwd()
     execute 'Unite -smartcase -start-insert -wipe -input='.getcwd().'** file_mru'
 endfunction
 
+
+function manager#plugin#unite#FindFiles(...)
+    if a:0 == 0
+        execute 'Unite -smartcase '.manager#plugin#unite#GetPreviewCommonSubSettings().' -buffer-name=''find'' find'
+    elseif a:0 == 1
+        execute 'Unite -smartcase '.manager#plugin#unite#GetPreviewCommonSubSettings().' -buffer-name=''find'' find:./:-iname\ *'.a:1.'*'
+    elseif a:0 = 2
+        execute 'Unite -smartcase '.manager#plugin#unite#GetPreviewCommonSubSettings().' -buffer-name=''find'' find:./:-iname\ *'.a:1.'*'
+    endif
+    "execute 'Unite -smartcase '.manager#plugin#unite#GetPreviewCommonSubSettings().' -buffer-name=''find'' find:./:-name\ *'.manager#utils#GetBaseFilenameForFindSimiliarFunction().'*.*'
+endfunction
+
+
+function s:FindFiles(p_path, p_filename)
+    execute 'Unite -smartcase '.manager#plugin#unite#GetPreviewCommonSubSettings().' -buffer-name=''find'' find:'.a:p_path.':-iname\ *'.a:p_filename.'*'
+endfunction
+
+
 function s:mappings()
     let g:unite_no_default_keymappings = 1
 
