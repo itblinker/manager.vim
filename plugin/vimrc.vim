@@ -96,9 +96,14 @@ nnoremap td :tabclose <CR>
 vnoremap < <gv
 vnoremap > >gv
 
+vnoremap p pgvy
+vnoremap P Pgvy
+
+nnoremap <leader>\| :vsplit<CR>
+nnoremap <leader>_ :split<CR>
+
 vnoremap <leader>G :call manager#utils#GrepFromPath(manager#utils#GetFromVisualSelection(), getcwd())<CR>
-vnoremap <leader>o :call manager#utils#FindAndOpenFile(manager#utils#GetFromVisualSelection())<CR>
-vnoremap <leader>g :call manager#utils#FindAndOpenFile('*'.manager#utils#GetFromVisualSelection().'*')<CR>
+vnoremap <leader>o :call manager#plugin#unite#FindFile(manager#utils#GetFromVisualSelection())<CR>
 
 set pastetoggle=<F2>
 

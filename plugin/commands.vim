@@ -12,3 +12,4 @@ command -nargs=* -complete=file SniffKeyword :call manager#utils#GrepFromPath(<f
 command -nargs=* -complete=file FindFileAndOpen :call manager#utils#FindAndOpenFile(<f-args>)
 
 command -nargs=* -complete=file FF : call manager#plugin#unite#FindFiles(<f-args>)
+

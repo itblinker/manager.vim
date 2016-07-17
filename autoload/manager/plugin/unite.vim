@@ -86,9 +86,11 @@ function manager#plugin#unite#FindFiles(...)
     elseif a:0 = 2
         execute 'Unite -smartcase '.manager#plugin#unite#GetPreviewCommonSubSettings().' -buffer-name=''find'' find:./:-iname\ *'.a:1.'*'
     endif
-    "execute 'Unite -smartcase '.manager#plugin#unite#GetPreviewCommonSubSettings().' -buffer-name=''find'' find:./:-name\ *'.manager#utils#GetBaseFilenameForFindSimiliarFunction().'*.*'
 endfunction
 
+function manager#plugin#unite#FindFile(p_filename)
+    execute 'Unite -smartcase '.manager#plugin#unite#GetPreviewCommonSubSettings().' -buffer-name=''find'' find:./:-iname\ '.a:p_filename
+endfunction
 
 function s:FindFiles(p_path, p_filename)
     execute 'Unite -smartcase '.manager#plugin#unite#GetPreviewCommonSubSettings().' -buffer-name=''find'' find:'.a:p_path.':-iname\ *'.a:p_filename.'*'
