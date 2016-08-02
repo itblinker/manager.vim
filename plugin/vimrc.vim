@@ -26,7 +26,12 @@ set ttyfast
 set clipboard^=unnamed,unnamedplus
 
 set background=dark
-colorscheme ron
+if has('gui_running')
+    colorscheme elflord
+else
+
+    colorscheme ron
+endif
 
 set hidden
 set autoread
