@@ -101,9 +101,6 @@ nnoremap td :tabclose <CR>
 vnoremap < <gv
 vnoremap > >gv
 
-vnoremap p pgvy
-vnoremap P Pgvy
-
 nnoremap <leader>\| :vsplit<CR>
 nnoremap <leader>_ :split<CR>
 

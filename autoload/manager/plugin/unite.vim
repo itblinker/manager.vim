@@ -55,6 +55,10 @@ function manager#plugin#unite#GtagInheritanceInput()
     return  escape(' -input=class|struct|public|protected|private ', '|')
 endfunction
 
+function manager#plugin#unite#GtagNoDeclarationsInput()
+    return  escape(' -input=!virtual|override ', '|')
+endfunction
+
 function manager#plugin#unite#GetPreviewCommonSubSettings()
     return  ' -winheight=20 -previewheight=15'
 endfunction
